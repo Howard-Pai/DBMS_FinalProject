@@ -43,7 +43,6 @@ public class Login {
 			String mail = scanner.next();
 			register(account,name,password,major,mail);
 		}
-		
 	
 	}
 	
