@@ -44,7 +44,6 @@ public class Login {
 			register(account,name,password,major,mail);
 		}
 	
-		
 	}
 	
 	public static Map<Integer,String> account_data() {
