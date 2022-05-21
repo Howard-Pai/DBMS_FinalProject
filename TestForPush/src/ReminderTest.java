@@ -15,12 +15,13 @@ public class ReminderTest {
 	static final String PASS = "aaa111ccc";
 	static final String token = "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";
 	
+	
 	public static void main(String[] args) {
 		//搜尋日期處理
 		System.out.println("請輸入要查詢的時間，Ex:108-09-2、108-11-15");
 		Scanner in = new Scanner(System.in);
 		String searchDate = in.next();
-		
+		//幫我push 下次刪 int a =1;
 		/** 有空再做
 		if(searchDate.contains("-")) {
 			if( searchDate.substring(3, 4).equals("-") ){
