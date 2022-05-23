@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>NCCU課程查詢-課程評論</title>
+	<style type="text/css">
+		body 
+		{
+			font-family: verdana;
+	      background-color: rgb(250, 248, 245);
+    	}
+    	h2
+		{
+			font-family: verdana;
+			font-size: 300%;
+			position: absolute;
+			top: 5%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+		}
+    	table
+	    {
+	    	font-family: verdana;
+		    padding:5px 15px; border:2px black solid;
+			cursor:pointer;
+			-webkit-border-radius: 5px;
+			border-radius: 5px; 
+			color: rgb(0, 0, 0);
+	        //display: block;
+	        margin: auto;
+	        position: absolute;
+	        top: 30%;
+	        left: 50%;
+	        transform: translate(-50%,-50%);
+	        width: 45%;
+	    }
+    	table td,
+	    table th
+	    {
+	    	font-family: verdana;
+	    	text-align: center;
+	    	//padding: 1px;
+	    	width="10%" height="50px"
+	    }
+	</style>
+</head>
+<body>
+	<div align="right"><a href="dbms_webpage.html">回主頁</a> / <a href="dbms_login.html">登入</a></div>
+	<form>
+		<h2>資料庫管理/周致遠</h2>
+		
+		<table>
+			<tbody>
+				<tr>
+					<th><h3>甜度</h3></th>
+					<td>10/10</td>
+				</tr>
+
+				<tr>
+					<th><h3>涼度</h3></th>
+					<td>10/10</td>
+				</tr>
+
+				<tr>
+					<th><h3>上課品質</h3></th>
+					<td>10/10</td>
+				</tr>
+
+				<tr>
+					<th><h3>補充評論</h3></th>
+					<td>上課非常有趣</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+</body>
+</html>
