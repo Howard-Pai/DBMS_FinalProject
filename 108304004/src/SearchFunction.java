@@ -33,7 +33,7 @@ public class SearchFunction {
 				System.out.println("mysql Connection Success ");
 				Statement st = conn.createStatement();
 				//之後要加上評分的資料庫 然後抓出來
-				try (ResultSet resultSet = st.executeQuery("SELECT CourseName,Professor,Semester FROM course WHERE CourseName LIKE '%"+input+"%' OR Professor Like '%"+input+"%'GROUP BY CourseName,Professor,Semester,Department")) {
+				try (ResultSet resultSet = st.executeQuery("SELECT CourseID,CourseName,Professor,Semester FROM course WHERE CourseName LIKE '%"+input+"%' OR Professor Like '%"+input+"%'GROUP BY CourseName,Professor,Semester,Department")) {
 					System.out.println("read data Success!");
 					String[] columnNames = { "CourseName","Professor","Semester","Score"};
 					/** 表頭 有空可以變成format形，暫時不知道這是幹嘛的
@@ -42,9 +42,14 @@ public class SearchFunction {
 					}
 					System.out.println("");
 					*/
+					
+					ArrayList<Integer> courseId = new ArrayList<Integer>();//用來存取CourseID
+					
 					String[][] datas = new String[10][3]; //"[10][4] 以後可以設為 找到幾筆資料，欄位就放那個數字"
 					int i = 0;
+					
 					while (resultSet.next()) {
+						courseId.add(resultSet.getInt("CourseID"));
 						System.out.println(resultSet.getString("CourseName") + "    " + resultSet.getString("Professor") + "    "
 								+ resultSet.getString("Semester") + "    Score");
 						//System.out.println();
@@ -58,6 +63,11 @@ public class SearchFunction {
 						//還沒用到 笑死 datas[i]=tempdata;
 						i++;
 						//System.out.println();
+					}
+					//測試CourseID
+					for(Integer id : courseId) {
+						int ID = id.intValue();
+						System.out.println("CourseID: "+ID);
 					}
 					/**
 					for(int j=0;j<datas.length;j++) {
@@ -81,7 +91,7 @@ public class SearchFunction {
 				System.out.println("mysql Connection Success ");
 				Statement st = conn.createStatement();
 				//之後要加上評分的資料庫 然後抓出來
-				try (ResultSet resultSet = st.executeQuery("SELECT CourseName,TaName FROM TaCourse WHERE CourseName LIKE '%"+input+"%' OR TaName LIKE '%"+input+"%' GROUP BY CourseName,TaName")) {
+				try (ResultSet resultSet = st.executeQuery("SELECT TaCourseID,TaCourseName,TaName FROM TaCourse WHERE TaCourseName LIKE '%"+input+"%' OR TaName LIKE '%"+input+"%' GROUP BY TaCourseName,TaName")) {
 					System.out.println("read data Success!");
 					String[] columnNames = { "CourseName","TaName","Score"};
 					/** 表頭 有空可以變成format形，暫時不知道這是幹嘛的
@@ -90,10 +100,12 @@ public class SearchFunction {
 					}
 					System.out.println("");
 					*/
+					ArrayList<Integer> taCourseId = new ArrayList<Integer>();
 					String[][] datas = new String[10][3]; //"[10][4] 以後可以設為 找到幾筆資料，欄位就放那個數字"
 					int i = 0;
 					while (resultSet.next()) {
-						System.out.println(resultSet.getString("CourseName") + "    " + resultSet.getString("TaName") + "    "
+						taCourseId.add(resultSet.getInt("TaCourseID"));
+						System.out.println(resultSet.getString("TaCourseName") + "    " + resultSet.getString("TaName") + "    "
 								+ "    Score");
 						//System.out.println();
 						String[] tempdata = new String[3];
@@ -106,6 +118,10 @@ public class SearchFunction {
 						//還沒用到 笑死 datas[i]=tempdata;
 						i++;
 						//System.out.println();
+					}
+					for(Integer id : taCourseId) {
+						int ID = id.intValue();
+						System.out.println("TaCourseID: "+ID);
 					}
 					/**
 					for(int j=0;j<datas.length;j++) {
