@@ -33,7 +33,7 @@ public class SearchFunction {
 				System.out.println("mysql Connection Success ");
 				Statement st = conn.createStatement();
 				//之後要加上評分的資料庫 然後抓出來
-				try (ResultSet resultSet = st.executeQuery("SELECT CourseID,CourseName,Professor,Semester FROM course WHERE CourseName LIKE '%"+input+"%' OR Professor Like '%"+input+"%'GROUP BY CourseName,Professor,Semester,Department")) {
+				try (ResultSet resultSet = st.executeQuery("SELECT course.CourseID,CourseName,Professor,Semester,avg(overall) FROM course left join ccomment on course.CourseID = ccomment.CourseID WHERE CourseName LIKE '%"+input+"%' OR Professor Like '%"+input+"%' GROUP BY CourseName,Professor,Semester,Department")) {
 					System.out.println("read data Success!");
 					String[] columnNames = { "CourseName","Professor","Semester","Score"};
 					/** 表頭 有空可以變成format形，暫時不知道這是幹嘛的
@@ -51,7 +51,7 @@ public class SearchFunction {
 					while (resultSet.next()) {
 						courseId.add(resultSet.getInt("CourseID"));
 						System.out.println(resultSet.getString("CourseName") + "    " + resultSet.getString("Professor") + "    "
-								+ resultSet.getString("Semester") + "    Score");
+								+ resultSet.getString("Semester") + "    "+resultSet.getString("AVG(overall)"));
 						//System.out.println();
 						String[] tempdata = new String[3];
 						/** 跑出一堆null的東西 還沒看是幹嘛
@@ -64,11 +64,13 @@ public class SearchFunction {
 						i++;
 						//System.out.println();
 					}
-					//測試CourseID
+					/*測試CourseID
 					for(Integer id : courseId) {
 						int ID = id.intValue();
 						System.out.println("CourseID: "+ID);
 					}
+					*/
+					
 					/**
 					for(int j=0;j<datas.length;j++) {
 						for(int k=0;k<datas[0].length;k++) {
