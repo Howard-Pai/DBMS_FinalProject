@@ -17,8 +17,7 @@
 		transform: translate(-50%,-50%);
 	}
 	body {
-
-      background-color: rgb(250, 248, 245);
+		background-color: rgb(250, 248, 245);
     }
     form {
     	color: rgb(0, 0, 0);
@@ -33,29 +32,29 @@
     input[type="submit"]
     {
     	font-family: verdana;
-    padding:5px 15px; background:#ccc; border:0 none;
-	cursor:pointer;
-	-webkit-border-radius: 5px;
-	border-radius: 5px; 
-	height: 33px;
+    	padding:5px 15px; background:#ccc; border:0 none;
+		cursor:pointer;
+		-webkit-border-radius: 5px;
+		border-radius: 5px; 
+		height: 33px;
     }
     input[type="text"]
     {
     	font-family: verdana;
-    padding:5px 15px; border:2px black solid;
-	cursor:pointer;
-	-webkit-border-radius: 5px;
-	border-radius: 5px; 
-	height: 20px;
+    	padding:5px 15px; border:2px black solid;
+		cursor:pointer;
+		-webkit-border-radius: 5px;
+		border-radius: 5px; 
+		height: 20px;
 	}
 	input[type="passwaord"]
     {
     	font-family: verdana;
-    padding:5px 15px; border:2px black solid;
-	cursor:pointer;
-	-webkit-border-radius: 5px;
-	border-radius: 5px; 
-	height: 20px;
+   		padding:5px 15px; border:2px black solid;
+		cursor:pointer;
+		-webkit-border-radius: 5px;
+		border-radius: 5px; 
+		height: 20px;
 	}
 	a
 	{
@@ -67,7 +66,7 @@
 </head>
 <body>
 	<a href="dbms_webpage.html">回主頁</a>
-	<form action="dbms_webpage.html">
+	<form action="Action_test"> <!--原本為dbms_webpage.html-->
 		<h1>登入</h1>
 		<h2>帳號</h2> <input type="text" name="account" placeholder="學校信箱">
 		<h2>密碼</h2> <input type="passwaord" name="password" placeholder="身分證前四碼"><br><br><br>
