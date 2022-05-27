@@ -66,11 +66,12 @@
 </head>
 <body>
 	<a href="dbms_webpage.html">回主頁</a>
-	<form action="Action_test"> <!--原本為dbms_webpage.html-->
+	<form  method = post> <!--原本為dbms_webpage.html-->
 		<h1>登入</h1>
 		<h2>帳號</h2> <input type="text" name="account" placeholder="學校信箱">
 		<h2>密碼</h2> <input type="passwaord" name="password" placeholder="身分證前四碼"><br><br><br>
-		<input type="submit" value="登入">&nbsp;<input type="submit" value="註冊" style="margin-left:10px;">
+		<input type="submit" name="action" value="登入" onclick ="form.action='Login'">&nbsp;
+		<input type="submit" name="action" value="註冊" onclick ="form.action='Regiseter'" style="margin-left:10px;">
 	</form>
 </body>
 </html>
