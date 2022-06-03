@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>web test</name>
+	<name>Final-Project</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -28,11 +28,4 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>WebContent/dbms_comment.html</name>
-			<type>1</type>
-			<location>C:/Users/NB/Desktop/dbms final project/dbms_comment.html</location>
-		</link>
-	</linkedResources>
 </projectDescription>
