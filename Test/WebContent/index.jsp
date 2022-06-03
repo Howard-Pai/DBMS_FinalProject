@@ -5,7 +5,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>NCCU½Òµ{¬d¸ß-µn¤J</title>
+	<title>NCCUï¿½Òµ{ï¿½dï¿½ï¿½-ï¿½nï¿½J</title>
 	<style >
 	h1
 	{
@@ -65,13 +65,13 @@
 	</style>
 </head>
 <body>
-	<a href="dbms_webpage.html">¦^¥D­¶</a>
-	<form  method = post> <!--­ì¥»¬°dbms_webpage.html-->
-		<h1>µn¤J</h1>
-		<h2>±b¸¹</h2> <input type="text" name="account" placeholder="¾Ç®Õ«H½c">
-		<h2>±K½X</h2> <input type="passwaord" name="password" placeholder="¨­¤ÀÃÒ«e¥|½X"><br><br><br>
-		<input type="submit" name="action" value="µn¤J" onclick ="form.action='Login'">&nbsp;
-		<input type="submit" name="action" value="µù¥U" onclick ="form.action='Regiseter'" style="margin-left:10px;">
+	<a href="dbms_webpage.html">ï¿½^ï¿½Dï¿½ï¿½</a>
+	<form  method = post> <!--ï¿½ì¥»ï¿½ï¿½dbms_webpage.html-->
+		<h1>ï¿½nï¿½J</h1>
+		<h2>ï¿½bï¿½ï¿½</h2> <input type="text" name="account" placeholder="ï¿½Ç®Õ«Hï¿½c">
+		<h2>ï¿½Kï¿½X</h2> <input type="passwaord" name="password" placeholder="ï¿½ï¿½ï¿½ï¿½ï¿½Ò«eï¿½|ï¿½X"><br><br><br>
+		<input type="submit" name="action" value="ï¿½nï¿½J" onclick ="form.action='Login'">&nbsp;
+		<input type="submit" name="action" value="ï¿½ï¿½ï¿½U" onclick ="form.action='Regiseter'" style="margin-left:10px;">
 	</form>
 </body>
 </html>
