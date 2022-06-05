@@ -62,7 +62,7 @@
 </head>
 <body>
 	<h1 align="center" >NCCU政大課程查詢</h1>
-	<a href="login.jsp" >登入</a>
+	<a href=login.jsp>登入</a>
 	<form methd="post" action="Search" >
 		<input type='text' name='keyword' placeholder='輸入課程名稱或相關資訊' size="40" width="40" height="10" />   
 		<form >
