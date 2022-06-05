@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -41,27 +42,23 @@ public class Login extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.setContentType("text/html");
-		try {
-			out =  response.getWriter();
-			int account = Integer.parseInt(request.getParameter("account"));
-			String password = request.getParameter("password");
-			login(account,password);
-			
-			out.println("<center>");
-			
-		}catch(Exception e){
-			out.println("Error:"+e.getStackTrace());
-		}
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		response.setContentType("text/html");
+		response.setCharacterEncoding("utf-8");
+		try {
+			out =  response.getWriter();
+			int account = Integer.parseInt(request.getParameter("account"));
+			String password = request.getParameter("password");
+			login(account,password,request,response);
+			
+		}catch(Exception e){
+			out.println("Error:"+e.getStackTrace());
+		}
 	}
 	
 	public static Map<Integer,String> account_data() {
@@ -70,16 +67,13 @@ public class Login extends HttpServlet {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			System.out.println("Driver loaded!");
-			out.println("Driver loaded!</br>");
 		} catch(ClassNotFoundException e) {
 			System.out.println("Can't find driver");
-			out.println("Can't find driver</br>");
 			e.printStackTrace();
 		}
 		try {
 			Connection conn =  DriverManager.getConnection(DB_URL, USER, PASS);
 			System.out.println("mysql Connection Success");
-			out.println("mysql Connection Success");
 			Statement st= conn.createStatement();
 			try (ResultSet resultSet = st.executeQuery("SELECT StudentID, Password FROM STUDENT")) {
 				for (int i=0;resultSet.next();i++) {
@@ -94,12 +88,17 @@ public class Login extends HttpServlet {
 		return map;
 	}
 	
-	public static void login(int account,String password) {
+	public static void login(int account,String password,HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
 		Map<Integer, String> map= new HashMap<>();
 		map=account_data();
 		if(map.containsKey(account)) {
 			if(map.get(account).equals(password)) {
-				out.println("login successful</br>");
+				System.out.println("login successful");
+				request.setAttribute("username", account);
+				System.out.println(request.getAttribute("username"));
+				request.getRequestDispatcher("loginWeb.jsp").forward(request,response);
+				System.out.println("forward");
+				//response.sendRedirect("loginWeb.jsp");
 			}else {
 				out.println("login failed - Incorrect Password</br>");
 			}
