@@ -68,7 +68,7 @@
 		<input type='text' name='keyword' placeholder='輸入課程名稱或相關資訊' size="40" width="40" height="10" />   
 		<form >
 			<input type='submit'  value='搜尋正課' onclick="form.action='Search'"/>
-			<input type='submit'  value='搜尋TA課'  onclick="form.action='SearchTA'"/>
+			<input type='submit'  value='搜尋TA課' onclick="form.action='SearchTA'"/>
 		</form>
 	</form>
 <script>

@@ -40,7 +40,7 @@
 	        //display: block;
 	        margin: auto;
 	        position: absolute;
-	        top: 70%;
+	        top: 55%;
 	        left: 50%;
 	        transform: translate(-50%,-50%);
 	        width: 45%;
@@ -61,7 +61,7 @@
 			border-radius: 5px; 
 			height: 33px;
 			position: absolute;
-			top: 110%;
+			top: 85%;
 			left: 45%;
 	    }
 	</style>
@@ -70,8 +70,8 @@
 	<div align="right"><a href="loginWeb.jsp">回主頁</a></div>
 	<form>
 		<h2>我要評論</h2>
-		<h3 name='comment_lecture'>${courseName}${semester}學年度</h3>
-		<input type="hidden" name="courseID" value="${courseID}" />
+		<h3 name='comment_lecture'>${taCourseName}</h3>
+		<input type="hidden" name="taCourseID" value="${taCourseID}" />
 		<input type="hidden" name="studentID" value="${studentID}" />
 		<table>
 			<tbody>
@@ -125,7 +125,7 @@
 				</tr>
 			</tbody>
 		</table>
-		<input type="submit" name="sub" value="送出" onclick="form.action='AddComment'">
+		<input type="submit" name="sub" value="送出" onclick="form.action='AddTAComment'">
 	</form>
 	
 

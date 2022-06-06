@@ -17,8 +17,8 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class AddComment
  */
-@WebServlet("/AddComment")
-public class AddComment extends HttpServlet {
+@WebServlet("/AddTAComment")
+public class AddTAComment extends HttpServlet {
 	static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
 	static final String DB_URL = "jdbc:mysql://localhost:3306/finalProject?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
 	static final String USER = "root";
@@ -29,7 +29,7 @@ public class AddComment extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AddComment() {
+    public AddTAComment() {
         super();
     }
 
@@ -37,20 +37,18 @@ public class AddComment extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("--------AddComment--------");
-		int courseID;
-		int studentID;
-		courseID = Integer.parseInt(request.getParameter("courseID"));
+		System.out.println("--------AddTAComment--------");
+		int taCourseID = 0;
+		int studentID = 0;
+		taCourseID = Integer.parseInt(request.getParameter("taCourseID"));
 		studentID = Integer.parseInt(request.getParameter("studentID"));
 		
-		System.out.println("AddComment:courseID:"+courseID);
+		System.out.println("AddComment:courseID:"+taCourseID);
 		System.out.println("AddComment:studentID:"+studentID);
 		
 		int overall = Integer.parseInt(request.getParameter("overall"));
-		int sweetness = Integer.parseInt(request.getParameter("sweetness"));
-		int loading = Integer.parseInt(request.getParameter("loading"));
-		int difficulty = Integer.parseInt(request.getParameter("difficulty"));
-		int rank = Integer.parseInt(request.getParameter("rank"));
+		int clarity = Integer.parseInt(request.getParameter("clarity"));
+		int understandability = Integer.parseInt(request.getParameter("understandability"));
 		String textComment = request.getParameter("text_comment");
 		
 		response.setContentType("text/html");
@@ -58,21 +56,26 @@ public class AddComment extends HttpServlet {
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			System.out.println("AddComment:Driver loaded!");
+			System.out.println("AddTAComment:Driver loaded!");
 		}catch (ClassNotFoundException e) {
-			System.out.println("AddComment:Can't find driver!");
+			System.out.println("AddTAComment:Can't find driver!");
 			e.printStackTrace();
 		}
 		try {
 			Connection conn =  DriverManager.getConnection(DB_URL, USER, PASS);
-			System.out.println("AddComment:mysql Connection Success");
+			System.out.println("AddTAComment:mysql Connection Success");
 			Statement st= conn.createStatement();
 			try{
-				ResultSet resultSet= st.executeQuery("Select max(CCommentID) from ccomment");
+				ResultSet resultSet= st.executeQuery("Select max(TCommentID) from tcomment");
 				resultSet.next();
-				int newCID = resultSet.getInt("max(CCommentID)")+1;
-				st.executeUpdate("INSERT INTO ccomment VALUES(" + newCID+ "," +courseID + "," + studentID+ "," + overall+ "," + sweetness +"," + loading +"," + difficulty +"," + rank+",\""+textComment+"\")");
-				System.out.print("AddComment:comment Successful");
+				int newTID = resultSet.getInt("max(TCommentID)")+1;
+				
+				System.out.println("newTID:"+newTID+"taCourseID:"+taCourseID+"studentID:"+studentID);
+				
+				st.executeUpdate("INSERT INTO tcomment VALUES("+newTID+","+studentID+","+taCourseID+","+overall+","+clarity+","+understandability+",\""+textComment+"\")");
+				//INSERT INTO tcomment VALUES(6,11,127,1,1,1,'hii')
+				
+				System.out.print("AddTAComment:comment Successful");
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}

@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=BIG5"
-    pageEncoding="BIG5"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>NCCU�ҵ{�d��-�n�J</title>
+	<title>NCCU課程查詢-登入</title>
 	<style >
 	h1
 	{
@@ -65,13 +65,13 @@
 	</style>
 </head>
 <body>
-	<a href="index.jsp">�^�D��</a>
+	<a href="index.jsp">回主頁</a>
 	<form  method = post>
-		<h1>�n�J</h1>
-		<h2>�b��</h2> <input type="text" name="account" placeholder="�ǮիH�c">
-		<h2>�K�X</h2> <input type="passwaord" name="password" placeholder="�����ҫe�|�X"><br><br><br>
-		<input type="submit" name="action" value="�n�J" onclick ="form.action='Login'">&nbsp;
-		<input type="submit" name="action" value="���U" onclick ="form.action='register.jsp'" style="margin-left:10px;">
+		<h1>登入</h1>
+		<h2>帳號</h2> <input type="text" name="account" placeholder="學校信箱">
+		<h2>密碼</h2> <input type="passwaord" name="password" placeholder="身分證前四碼"><br><br><br>
+		<input type="submit" name="action" value="登入" onclick ="form.action='Login'">&nbsp;
+		<input type="submit" name="action" value="註冊" onclick ="form.action='register.jsp'" style="margin-left:10px;">
 	</form>
 </body>
 </html>

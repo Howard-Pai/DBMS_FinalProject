@@ -39,8 +39,11 @@ public class Search extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("--------Search--------");
 		response.setContentType("text/html");
-		response.setCharacterEncoding("UTF-8");  
+		response.setCharacterEncoding("UTF-8");
+
 		String keyword =  request.getParameter("keyword");
+		System.out.println(keyword);
+		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			System.out.println("Driver loaded!");
@@ -84,7 +87,7 @@ public class Search extends HttpServlet {
 			System.out.println("studentID==null");
 			request.getRequestDispatcher("search.jsp").forward(request, response);
 		}else {
-			System.out.println("studentID!=null");
+			System.out.println("studentID:"+request.getParameter("studentID"));
 			request.setAttribute("studentID", request.getParameter("studentID"));
 			request.getRequestDispatcher("loginSearch.jsp").forward(request, response);
 		}

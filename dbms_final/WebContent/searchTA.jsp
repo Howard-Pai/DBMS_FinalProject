@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=BIG5"
-    pageEncoding="BIG5"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>NCCU½Òµ{¬d¸ß-¬d¸ßµ²ªG</title>
+	<title>NCCUèª²ç¨‹æŸ¥è©¢-æŸ¥è©¢çµæœ</title>
 	<style type="text/css">
 	h2
 	{
@@ -78,42 +78,42 @@
 	</style>
 </head>
 <body>
-	<h2>·j´Mµ²ªG(TA½Ò)</h2>
-	<div align="right"><a href="index.jsp">¦^¥D­¶</a> / <a href="login.jsp">µn¤J</a></div>
+	<h2>æœå°‹çµæœ(TAèª²)</h2>
+	<div align="right"><a href="index.jsp">å›ä¸»é </a> / <a href="login.jsp">ç™»å…¥</a></div>
 	<!--
 	<form action="search.jsp" name="form1" >
-		<input type="submit" value="¥¿½Ò" >
+		<input type="submit" value="æ­£èª²" >
 		
 	</form >
 	<form action="searchTA.jsp" name="form2">
-		<input type="submit" value="TA½Ò">
+		<input type="submit" value="TAèª²">
 	</form>
 	-->
 	<table border="0" cellspacing="0" cellpadding="0" width="50%" >
 		<tbody>
 			<tr>
-				<th  valign="top" ><h3>½Òµ{¦WºÙ</h3></th>
-				<th  height="50px" valign="top" ><h3>§U±Ğ</h3></th>
-				<th width="10%" height="50px" valign="top" ><h3>Á`Åéµû¤À</h3></th>
+				<th  valign="top" ><h3>èª²ç¨‹åç¨±</h3></th>
+				<th  height="50px" valign="top" ><h3>åŠ©æ•™</h3></th>
+				<th width="10%" height="50px" valign="top" ><h3>ç¸½é«”è©•åˆ†</h3></th>
 				<th width="10%" height="50px" valign="top" > </th>
 			</tr>
 
 			<tr>
-				<td width="10%" height="50px" valign="top" ><a href="taCourseComment?taCourseID=${taCourseID0}">${taCourseName0}</a></td>
+				<td width="10%" height="50px" valign="top" ><a href="TaCourseComment?taCourseID=${taCourseID0}">${taCourseName0}</a></td>
 				<td width="10%" height="50px" valign="top" > ${taName0} </td>
 				<td width="10%" height="50px" valign="top" > ${score0} </td>
 				<td width="10%"  height="50px" valign="top" ><a href="LinkToAddComment?taCourseID=${taCourseID0}">${addComment0}</a></td>
 			</tr>
 
 			<tr>
-				<td width="10%" height="50px" valign="top" ><a href="taCourseComment?taCourseID=${taCourseID1}">${taCourseName1}</a></td>
+				<td width="10%" height="50px" valign="top" ><a href="TaCourseComment?taCourseID=${taCourseID1}">${taCourseName1}</a></td>
 				<td width="10%" height="50px" valign="top" > ${taName1} </td>
 				<td width="10%" height="50px" valign="top" > ${score1} </td>
 				<td width="10%"  height="50px" valign="top" ><a href="LinkToAddComment?taCourseID=${taCourseID1}">${addComment1}</a></td>
 			</tr>
 
 			<tr>
-				<td width="10%" height="50px" valign="top" ><a href="taCourseComment?taCourseID=${taCourseID2}">${taCourseName2}</a></td>
+				<td width="10%" height="50px" valign="top" ><a href="TaCourseComment?taCourseID=${taCourseID2}">${taCourseName2}</a></td>
 				<td width="10%" height="50px" valign="top" > ${taName2} </td>
 				<td width="10%" height="50px" valign="top" > ${score2} </td>
 				<td width="10%"  height="50px" valign="top" ><a href="LinkToAddComment?taCourseID=${taCourseID2}">${addComment2}</a></td>

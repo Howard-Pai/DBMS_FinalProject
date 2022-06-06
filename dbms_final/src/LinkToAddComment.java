@@ -46,15 +46,13 @@ public class LinkToAddComment extends HttpServlet {
 		int courseID = 0;
 		int taCourseID = 0;
 		int studentID = 0;
-	
-		if(request.getParameter("studentID")==null) {
+		
+		if ( request.getParameter("studentID")==null ) {
 			response.sendRedirect("login.jsp");
 		}else {
 			studentID = Integer.parseInt(request.getParameter("studentID"));
-			if (request.getParameter("CourseID")!=null) {
+			if( request.getParameter("courseID") != null) {
 				courseID = Integer.parseInt(request.getParameter("courseID"));
-				System.out.println("courseID:"+courseID);
-				System.out.println("studentID:"+studentID);
 				try {
 					Class.forName("com.mysql.cj.jdbc.Driver");
 					System.out.println("Driver loaded!");
@@ -82,10 +80,8 @@ public class LinkToAddComment extends HttpServlet {
 				}
 				request.setAttribute("studentID",studentID);
 				request.getRequestDispatcher("addComment.jsp").forward(request, response);
-			}else if(request.getParameter("taCourseID")!=null){
+			}else if ( request.getParameter("taCourseID") !=null ) {
 				taCourseID = Integer.parseInt(request.getParameter("taCourseID"));
-				System.out.println("taCourseID:"+courseID);
-				System.out.println("studentID:"+studentID);
 				try {
 					Class.forName("com.mysql.cj.jdbc.Driver");
 					System.out.println("Driver loaded!");
@@ -103,6 +99,7 @@ public class LinkToAddComment extends HttpServlet {
 						String taCourseName = resultSet.getString(1);
 						request.setAttribute("taCourseName", taCourseName);
 						request.setAttribute("taCourseID", taCourseID);
+						System.out.println("taCourseID:"+taCourseID);
 					} catch (SQLException e) {
 						e.printStackTrace();
 					}

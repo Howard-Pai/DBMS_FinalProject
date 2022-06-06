@@ -14,7 +14,7 @@
     	h2
 		{
 			font-family: verdana;
-			font-size: 300%;
+			font-size: 200%;
 			position: absolute;
 			top: 5%;
 			left: 50%;
@@ -49,23 +49,18 @@
 <body>
 	<div align="right"><a href="index.jsp">回主頁</a> / <a href="login.jsp">登入</a></div>
 	<form>
-		<h2>${courseName}/${professor}</h2>
+		<h2>${taCourseName}/${taName}</h2>
 
 		<table>
 			<tbody>
 				<tr>
-					<th><h3>甜度</h3></th>
-					<td>${sweetness}</td>
+					<th><h3>表達能力</h3></th>
+					<td>${clarity}</td>
 				</tr>
 
 				<tr>
-					<th><h3>Loading</h3></th>
-					<td>${loading}</td>
-				</tr>
-
-				<tr>
-					<th><h3>困難度</h3></th>
-					<td>${difficulty}</td>
+					<th><h3>可理解性</h3></th>
+					<td>${understandability}</td>
 				</tr>
 				
 				<tr>
